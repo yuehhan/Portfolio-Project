@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'project_styles/styles.css' %}">
+<!--Main Profile page, add picture-->
+<body>
+    <style>
+        body{
+            background-image:  url("/static/img/space2.png");
+            background-position: center;
+            background-size:cover;
+        }
+    
+    </style>
+    
+
+<img src="/static/img/mypicture2.png" alt="My Picture">
+<style>
+    img{
+        max-width: 34%;
+        max-height: 34%;
+    }
+
+</style>
+</img>
+
+<div class="textbox">
+    <p>
+        Hello My name is Yueh Han. I am from New Jersey
+    </p>
+
+</div>
+</body>
+
+<div class="row">
+{% for project in projects %}
+<style>
+    .row{
+        background:linear-gradient(blue,purple)
+    }
+</style>
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static project.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{% url 'project_detail' project.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

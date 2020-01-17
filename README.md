@@ -1,1 +1,1 @@
-# Portfolio-Project
+This was an attempt to create a portfolio using Django. I put this project on hold since I figured there is a better way to create a portfolio. However, I plan to pick this project back up once I have some more time to practice.
